@@ -44,6 +44,14 @@ class RiotApiWrapper
     }
 
     /**
+     * @return Riot
+     */
+    public function Riot(): Riot
+    {
+        return (new Riot(new RequestHandler($this->getClient(),$this->apiKey)));
+    }
+
+    /**
      * @return LOL
      */
     public function LOL(): LOL
