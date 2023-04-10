@@ -1,8 +1,6 @@
 
 # RAW (RiotApiWrapper)
 
-Certainly, here's the updated description of your PHP project on GitHub using Composer, including the name of your project, RAW (RiotApiWrapper):
-
 RAW (RiotApiWrapper) is a PHP project designed to provide a wrapper for the Riot Games API, allowing developers to easily access the data and services offered by the API. With this wrapper, users can access the API through simple and intuitive PHP code, without needing to worry about the underlying technical details of the API.
 
 Our goal is to make the Riot Games API accessible to as many people as possible, regardless of their technical background or level of expertise. By simplifying the interface and providing clear documentation, RAW enables a wider range of developers to take advantage of the wealth of data and services available through the Riot Games API.
