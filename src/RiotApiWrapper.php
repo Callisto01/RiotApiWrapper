@@ -43,6 +43,14 @@ class RiotApiWrapper
         return $this->cache;
     }
 
+    /**
+     * @return LOL
+     */
+    public function LOL(): LOL
+    {
+        return (new LOL(new RequestHandler($this->getClient(),$this->apiKey)));
+    }
+
 
     private function getClient(){
         if($this->cache){
