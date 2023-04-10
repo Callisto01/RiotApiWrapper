@@ -1,0 +1,20 @@
+{
+    "name": "callisto/riot-api-wrapper",
+    "description": "RiotApiWrapper (RAW)",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Callisto\\RiotApiWrapper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Callisto"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/http-client": "^6.2",
+        "symfony/framework-bundle": "^6.2"
+    }
+}
