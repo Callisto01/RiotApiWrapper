@@ -1,6 +1,8 @@
 
 # RAW (RiotApiWrapper)
 
+
+
 RAW (RiotApiWrapper) is a PHP project designed to provide a wrapper for the Riot Games API, allowing developers to easily access the data and services offered by the API. With this wrapper, users can access the API through simple and intuitive PHP code, without needing to worry about the underlying technical details of the API.
 
 Our goal is to make the Riot Games API accessible to as many people as possible, regardless of their technical background or level of expertise. By simplifying the interface and providing clear documentation, RAW enables a wider range of developers to take advantage of the wealth of data and services available through the Riot Games API.
@@ -9,7 +11,13 @@ Using Composer to manage dependencies, RAW is designed to be easy to install and
 
 So if you're looking for a simple and reliable way to work with the Riot Games API, look no further than RAW. With clear documentation, intuitive code, and support for Composer, RAW is the perfect choice for anyone looking to get the most out of the Riot Games API.
 
-## Installation
+| Riot API    | LoL API     | TFT API             | LORT API            | Valorant API        |
+|:------------|:------------|:--------------------|:--------------------|:--------------------|
+| ✅ Available | ✅ Available | 🚧 Work in Progress | 🚧 Work in progress | 🚧 Work in progress |    
+
+Vote for next update priority : [https://strawpoll.com/polls/poy9W4MrJgJ](https://strawpoll.com/polls/poy9W4MrJgJ)
+
+## Deployment
 
 To install this project run
 
@@ -37,32 +45,14 @@ $summoner = $raw->LOL('EUW1')->Summoner()->byName('NAME');
 You can see the original Riot api documentation here : [https://developer.riotgames.com/apis](https://developer.riotgames.com/apis)
 
 ### Platforms and regions list
-
-| Platforms |
-| :-------- |
-| `BR1` |
-| `EUN1` |
-| `EUW1` |
-| `JP1` |
-| `KR` |
-| `LA1` |
-| `LA2` |
-| `NA1` |
-| `OC1` |
-| `TR1` |
-| `RU` |
-| `PH2` |
-| `SG2` |
-| `TH2` |
-| `TW2` |
-| `VN2` |
-
-| Regions |
-| :-------- |
-| `AMERICAS` |
-| `ASIA` |
-| `EUROPE` |
-| `SEA` |
+Platforms list
+```php
+['BR1','EUN1','EUW1','JP1','KR','LA1','LA2','NA1','OC1','TR1','RU','PH2','SG2','TH2','TW2','VN2']
+```
+Regions list
+```php
+['AMERICAS','ASIA','EUROPE','SEA']
+```
 
 ### Wrapper References
 ### Riot
@@ -150,11 +140,11 @@ You can see the original Riot api documentation here : [https://developer.riotga
 - LOL()->Summoner(string $platform)->bySummonerId(string $summonerId)
 ```
 #### TFT
-Coming soon
+🚧 Work in Progress
 #### LORT
-Coming soon
+🚧 Work in Progress
 #### Valorant
-Coming soon
+🚧 Work in Progress
 
 ## Exemples
 
