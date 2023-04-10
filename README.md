@@ -11,9 +11,9 @@ Using Composer to manage dependencies, RAW is designed to be easy to install and
 
 So if you're looking for a simple and reliable way to work with the Riot Games API, look no further than RAW. With clear documentation, intuitive code, and support for Composer, RAW is the perfect choice for anyone looking to get the most out of the Riot Games API.
 
-| Riot API    | LoL API     | TFT API             | LORT API            | Valorant API        |
-|:------------|:------------|:--------------------|:--------------------|:--------------------|
-| ✅ Available | ✅ Available | 🚧 Work in Progress | 🚧 Work in progress | 🚧 Work in progress |    
+| Riot API    | LoL API     | TFT API             | LORT API            | Valorant API        | Datadragon          |
+|:------------|:------------|:--------------------|:--------------------|:--------------------|:--------------------|
+| ✅ Available | ✅ Available | 🚧 Work in Progress | 🚧 Work in progress | 🚧 Work in progress | 🚧 Work in progress |
 
 Vote for next update priority : [https://strawpoll.com/polls/poy9W4MrJgJ](https://strawpoll.com/polls/poy9W4MrJgJ)
 
@@ -98,7 +98,7 @@ Regions list
 
 - LOL()->League(string $platform)->byQueue(string $queue)
 - LOL()->League(string $platform)->bySummonerId(string $summonerId)
-- LOL()->League(string $platform)->byQueueTierDivisionstring $queue, string $tier, string $division)
+- LOL()->League(string $platform)->byQueueTierDivisionstring(string $queue, string $tier, string $division)
 - LOL()->League(string $platform)->grandMasterLeagues(string $queue)
 - LOL()->League(string $platform)->leagueId(string $leagueId)
 - LOL()->League(string $platform)->masterLeagues(string $queue)
