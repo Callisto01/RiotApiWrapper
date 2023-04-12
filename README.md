@@ -273,6 +273,21 @@ try {
     exit($exception->getMessage());
 }
 ```
+## Return Example
+```php
+$summoner = $raw->LOL()->Summoner('BR1')->byName('frosty');
+```
+```php
+array(7) {
+    ["id"]              => string(47) "d28PpG7Udqz1DC426V0xhBcExDZ21m8eYY9Ys9zhOOsKjNM"
+    ["accountId"]       => string(47) "f_WSG9mgV23Zxh132C_9d2o1DMYg3Rq9sPp_APHp1QGlcdA"
+    ["puuid"]           => string(78) "oB7jr-sPTP2Vs8Y6fglY345VFRdjNfxfPoAsXI3ViJbBlAmWCvN81igfZO88Y5_5JlCQreBKKO4uA"
+    ["name"]            => string(6) "frosty"
+    ["profileIconId"]   => int(5490)
+    ["revisionDate"]    => int(1681258365846)
+    ["summonerLevel"]   => int(813)
+}
+```
 
 ## Contributing
 
