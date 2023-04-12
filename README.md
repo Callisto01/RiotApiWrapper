@@ -13,16 +13,19 @@ So if you're looking for a simple and reliable way to work with the Riot Games A
 
 | Riot API    | LoL API     | TFT API             | LORT API            | Valorant API        | Datadragon          |
 |:------------|:------------|:--------------------|:--------------------|:--------------------|:--------------------|
-| ✅ Available | ✅ Available | 🚧 Work in Progress | 🚧 Work in progress | 🚧 Work in progress | 🚧 Work in progress |
+| ✅ Available | ✅ Available | ✅ Available | 🚧 Work in progress | 🚧 Work in progress | 🚧 Work in progress |
 
-Vote for next update priority : [https://strawpoll.com/polls/poy9W4MrJgJ](https://strawpoll.com/polls/poy9W4MrJgJ)
+Vote for next update priority (3.0.0) : [https://strawpoll.com/polls/X3nk4qODEgE](https://strawpoll.com/polls/X3nk4qODEgE)
+
+Vote history :
+- Vote result for version 2.0.0 (completed on 2023/04/12) : https://ibb.co/XZ6FsD2
 
 ## Deployment
 
 To install this project run
 
 ```bash
-  composer require callisto/riot-api-wrapper
+composer require callisto/riot-api-wrapper
 ```
 
 **RAW requires Symfony 6.2 or later and php 8.0 or later**
@@ -98,7 +101,7 @@ Regions list
 
 - LOL()->League(string $platform)->byQueue(string $queue)
 - LOL()->League(string $platform)->bySummonerId(string $summonerId)
-- LOL()->League(string $platform)->byQueueTierDivisionstring(string $queue, string $tier, string $division)
+- LOL()->League(string $platform)->byQueueTierDivision(string $queue, string $tier, string $division)
 - LOL()->League(string $platform)->grandMasterLeagues(string $queue)
 - LOL()->League(string $platform)->leagueId(string $leagueId)
 - LOL()->League(string $platform)->masterLeagues(string $queue)
@@ -139,15 +142,45 @@ Regions list
 - LOL()->Summoner(string $platform)->byPuuid(string $puuid)
 - LOL()->Summoner(string $platform)->bySummonerId(string $summonerId)
 ```
-#### TFT
-🚧 Work in Progress
+#### TFT (⭐ NEW)
+
+```php
+// TFT/League
+
+- TFT()->League(string $platform)->challenger()
+- TFT()->League(string $platform)->bySummonerId(string $summonerId)
+- TFT()->League(string $platform)->byTierAndDivision(string $tier, string $division, array $options = [])
+- TFT()->League(string $platform)->grandmaster()
+- TFT()->League(string $platform)->byLeagueId(string $leagueId)
+- TFT()->League(string $platform)->master()
+- TFT()->League(string $platform)->topByQueue(string $queue)
+```
+```php
+// TFT/Matches
+
+- TFT()->Matches(string $region)->ids(string $puuid, array $options = [])
+- TFT()->Matches(string $region)->match(string $matchId)
+```
+```php
+// TFT/Status
+
+- TFT()->Status(string $platform)->platformData()
+```
+```php
+// TFT/Summoner
+
+- TFT()->Summoner(string $platform)->byAccountId(string $accountId)
+- TFT()->Summoner(string $platform)->byName(string $name)
+- TFT()->Summoner(string $platform)->byPuuid(string $puuid)
+- TFT()->Summoner(string $platform)->bySummonerId(string $summonerId)
+```
 #### LORT
 🚧 Work in Progress
 #### Valorant
 🚧 Work in Progress
 
 ## Exemples
-
+**LOL**
 ```php
 
 // Get recent LoL matches exemple
@@ -209,6 +242,36 @@ try {
 
 
 print_r($results);
+```
+
+**TFT**
+```php
+// Get summoner and last match
+
+require __DIR__ . '/../../vendor/autoload.php';
+
+$raw = new \Callisto\RiotApiWrapper\RiotApiWrapper('YOUR_API_KEY'); //Init RiotApiWrapper
+$raw->Cache(); // (Optional) Enable cache.
+
+try {
+
+    $summoner = $raw->TFT()->Summoner('EUW1')->byName('NAME'); // Get {NAME} summoner data
+
+    $options = [
+        'count' => 1, // (Optional) max results count
+    ];
+
+    $lastMatchId = $raw->TFT()->Matches('EUROPE')->ids($summoner['puuid'],$options)[0]; // Get last match id
+
+    $lastMatch = $raw->TFT()->Matches('EUROPE')->match($lastMatchId); // Get $lastMatchId match data
+
+    print_r($lastMatch);
+
+} catch (Exception $exception) {
+    exit($exception->getMessage());
+} catch (\Callisto\RiotApiWrapper\Exceptions\RequestExceptions $exception) {
+    exit($exception->getMessage());
+}
 ```
 
 ## Contributing

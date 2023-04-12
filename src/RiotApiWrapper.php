@@ -7,6 +7,7 @@ use Callisto\RiotApiWrapper\Request\RequestCache;
 use Callisto\RiotApiWrapper\Request\RequestHandler;
 use Callisto\RiotApiWrapper\Request\RequestInitiator;
 use Callisto\RiotApiWrapper\Riot\Riot;
+use Callisto\RiotApiWrapper\TFT\TFT;
 use Symfony\Component\HttpClient\CachingHttpClient;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -59,7 +60,18 @@ class RiotApiWrapper
         return (new LOL(new RequestHandler($this->getClient(),$this->apiKey)));
     }
 
+    /**
+     * @return TFT
+     */
+    public function TFT(): TFT
+    {
+        return (new TFT(new RequestHandler($this->getClient(),$this->apiKey)));
+    }
 
+
+    /**
+     * @return CachingHttpClient|HttpClient|HttpClientInterface
+     */
     private function getClient(){
         if($this->cache){
             return $this->cache->getClient();
