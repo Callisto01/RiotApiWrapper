@@ -70,7 +70,7 @@ class Challenges
      */
     public function leaderboardByLevel(string $challengeId, string $level): mixed
     {
-        $path = $this->setPath('/challenges/' . $challengeId . '/leaderboard/by-level/' . $level);
+        $path = $this->setPath('/challenges/' . $challengeId . '/leaderboards/by-level/' . $level);
         return $this->requestHandler->getResponse($path);
     }
 
