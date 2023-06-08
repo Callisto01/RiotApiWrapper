@@ -37,7 +37,7 @@ class Matches
      */
     public function ids(string $puuid, array $options = []): mixed
     {
-        $path = $this->setPath('/matches/by-uuid/' . $puuid . '/ids' . MatchesOPT::ids($options));
+        $path = $this->setPath('/matches/by-puuid/' . $puuid . '/ids' . MatchesOPT::ids($options));
         return $this->requestHandler->getResponse($path);
     }
 
